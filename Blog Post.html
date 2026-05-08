@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Benedict's Blog</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+
+:root {
+    --bg: #8aa3bd;
+    --text: #222;
+    --card: rgba(255,255,255,0.6);
+    --glass: rgba(255,255,255,0.3);
+    --header: #6d88a8;
+    --shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.dark {
+    --bg: #0f172a;
+    --text: #f1f5f9;
+    --card: rgba(30,30,30,0.7);
+    --glass: rgba(255,255,255,0.05);
+    --header: #1e293b;
+    --shadow: 0 8px 25px rgba(0,0,0,0.5);
+}
+
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.5s ease, color 0.5s ease;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+header {
+    text-align: center;
+    background: var(--header);
+    color: white;
+    padding: 30px 10px;
+    transition: 0.4s;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+header a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+nav a{
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-3px;
+    width:0%;
+    height:2px;
+    background:white;
+    transition:0.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
+.toggle-btn {
+    margin-top: 10px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.toggle-btn:hover {
+    transform: scale(1.05);
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.card {
+    background: var(--card);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+.project {
+    background: var(--glass);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+
+.project-content {
+    padding: 10px;
+}
+
+
+.about {
+    text-align: center;
+}
+
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: var(--header);
+    color: white;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+#topBtn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  padding:12px 15px;
+  border:none;
+  border-radius:50%;
+  background:#E5E7EB;
+  color:grey;
+  font-size:18px;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+}
+
+.hidden{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.8s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Benedict's Blog</h1>
+    <p>Sharing my journey as an IT Student</p>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#Programming">Programming</a>
+        <a href="#Goals">Goals</a>
+        <a href="index.html">Back to Main Page</a>
+    </nav>
+
+    <button class="toggle-btn" onclick="toggleDarkMode()"> Toggle Dark Mode</button>
+</header>
+
+<div class="container">
+<div class="card">
+    <h2>Background Music</h2>
+    <p>Play and chill while reading my blog journey :)</p>
+
+    <iframe style="border-radius:12px; margin-top:10px;"
+        src="https://open.spotify.com/embed/playlist/5wsu6sDRirNnMSa0pXWhuj"
+        width="100%" height="152"
+        frameborder="0"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+</div>
+
+
+    
+    <div id="about" class="card about">
+        <h2>About Me</h2>
+        <p>Hello! I'm Benedict, an IT student passionate about programming and web development(2nd Semester Edition).</p>
+        <p>I am now the type of student with a strong determination and passion for the things i do and i am doing my best to excell at the things i do and i am also doing my best to help my fellow students by guiding them to remember on why they are going to school, to focus on their goals and also i am trying to be an inspiration towards them, showing that by helping someone you can change their life positively.</p>
+    </div>
+
+    <div class="card">
+        <h2>My Blog</h2>
+        <p>This page is dedicated towards showcasing my blog documents including growth, challenges, and achievements.</p>
+    </div>
+
+    <div id="Programming" class="card">
+        <h2>My Programming Journey</h2>
+        <p>I started learning HTML, CSS, and Java during our first semester and started to realize how far i have gotten during this second semester</p>
+
+        <div class="project-grid">
+            <div class="project">
+                <img src="images/Html.jpg" alt="Html Project" loading="lazy">
+                <div class="project-content">
+                    <h3>HTML Project</h3>
+                    <p>This picture showcases our final project in html design.</p>
+                    <p>By doing this project it has made me realize that i have become more advanced than when i was first starting this project.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="images/JavaProgramming.jpg" alt="Programming Project" loading="lazy">
+
+                <div class="project-content">
+                    <h3>Java Learnings</h3>
+                    <p>This picture showcases our JavaScript learnings that will be presented during our lab activities and exam to test our skills in this language coding.</p>
+                    <p>This shows that with the help of our teachers, our capabilities will began to improve even further, we only needed to pay more attention towards them.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="Goals" class="card">
+        <h2>My Goals</h2>
+        <p>My goal is to become a successful programmer and to become an inspiration for other people.</p>
+        <h3>And my inspiration for this goal are the successful programmers that have made a huge impact on the world.</h3>
+
+        <div class="project-grid">
+            <div class="project">
+                <img src="images/James.jpg" alt="James" loading="lazy">
+                <div class="project-content">
+                    <h3>James Gosling</h3>
+                    <p>This picture showcases the person that invented the Java programming language, which is the reason on why there are so many apps and websites around the internet today.</P>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="images/Tim.jpg" alt="Tim" loading="lazy">
+                <div class="project-content">
+                    <h3>Tim Berners-Lee</h3>
+                    <P>This picture showcases the person that invented the World Wide Web, which is incredible due to the fact that it has helped us to advance and modernize our civilization and gave us the material that provided the informations, that can be accessed around the world.</p> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<footer>
+    <p>The journey may be hard, but the process is fun due to the friends and teachers that have helped you grow along the way :)</p>
+</footer>
+
+<button id="topBtn">↑</button> 
+
+<script>
+if(localStorage.getItem("darkMode") === "enabled"){
+    document.body.classList.add("dark");
+}
+
+
+function toggleDarkMode() {
+    document.body.classList.toggle("dark");
+
+    // Save mode
+    if(document.body.classList.contains("dark")){
+        localStorage.setItem("darkMode", "enabled");
+    } else {
+        localStorage.setItem("darkMode", "disabled");
+    }
+}
+
+document.getElementById("topBtn").onclick = () => {
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+};
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+document.querySelectorAll(".card, .project").forEach(el=>{
+  el.classList.add("hidden");
+  observer.observe(el);
+});
+
+</script>
+
+</body>
+</html>
